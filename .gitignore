@@ -1,0 +1,21 @@
+# Frontend
+frontend/node_modules/
+
+# Database backups
+database/*.sql~
+database/backup/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.env
+
+# Logs
+*.log
