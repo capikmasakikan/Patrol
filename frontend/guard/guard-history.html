@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My History - Security Patrol</title>
+    <link rel="stylesheet" href="css/guard-history.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <button id="backBtn" class="btn-back">← Back</button>
+            <h2>My Patrol History</h2>
+            <p id="guardName">Loading...</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Patrols</h3>
+                <p id="totalPatrols" class="stat-number">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Today</h3>
+                <p id="todayPatrols" class="stat-number">0</p>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">Loading patrol history...</div>
+
+        <!-- Patrol List -->
+        <div id="patrolList" class="patrol-list" style="display: none;">
+        </div>
+
+        <!-- No Data -->
+        <div id="noData" class="no-data" style="display: none;">
+            <p>📋</p>
+            <h3>No Patrol Records Yet</h3>
+            <p>Start scanning checkpoints to see your history here!</p>
+        </div>
+    </div>
+
+    <script src="js/guard-history.js"></script>
+</body>
+</html>

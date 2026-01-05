@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Checkpoint - Security Patrol</title>
+    <link rel="stylesheet" href="css/guard-scan.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h2 id="guardName">Loading...</h2>
+            <p id="guardShift">Shift: -</p>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+
+        <!-- Scan Area -->
+        <div class="scan-area">
+            <h1>📍 Scan Checkpoint</h1>
+            <p class="subtitle">Tap scan button and hold phone near NFC tag</p>
+
+            <!-- NFC Scan Button -->
+            <button id="scanBtn" class="scan-btn">
+                🔍 SCAN NFC TAG
+            </button>
+
+            <p id="statusText" class="status-text"></p>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Manual Entry -->
+            <div class="manual-section">
+                <h3>Manual Entry</h3>
+                <p class="manual-subtitle">(For testing or if NFC fails)</p>
+                
+                <input 
+                    type="text" 
+                    id="manualTagId" 
+                    placeholder="Enter checkpoint ID (e.g., NFC001)"
+                    class="manual-input"
+                >
+                
+                <button id="manualBtn" class="manual-btn">
+                    Submit Manual Entry
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <button id="historyBtn" class="history-btn">
+                📋 View My History
+            </button>
+        </div>
+    </div>
+
+    <script src="js/guard-scan.js"></script>
+</body>
+</html>
