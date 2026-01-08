@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage - Security Patrol</title>
+    <link rel="stylesheet" href="css/manage.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="pikm-logo.png" alt="Logo of PIKM" class="pikm-logo"/>
+                <h2>Kawalan Ulung Security</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                     Dashboard
+                </a>
+                <a href="manage.html" class="nav-item active">
+                     Manage
+                </a>
+            </nav>
+            
+            <div class="user-info">
+                <p id="adminName">Loading...</p>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Manage System</h1>
+                <p class="subtitle">Guards & Checkpoints Management</p>
+            </header>
+
+            <!-- Guards Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2> Guards Management</h2>
+                    <button id="addGuardBtn" class="btn-add">+ Add New Guard</button>
+                </div>
+                
+                <div id="guardsLoading" class="loading">Loading guards...</div>
+                
+                <div class="table-container" id="guardsTable" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Shift</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guardsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Checkpoints Section -->
+            <div class="section">
+                <div class="section-header">
+                    <h2> Checkpoints Management</h2>
+                    <button id="addCheckpointBtn" class="btn-add">+ Add New Checkpoint</button>
+                </div>
+                
+                <div id="checkpointsLoading" class="loading">Loading checkpoints...</div>
+                
+                <div class="table-container" id="checkpointsTable" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NFC Tag ID</th>
+                                <th>Name</th>
+                                <th>Building</th>
+                                <th>Floor</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="checkpointsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Guard Modal -->
+    <div id="guardModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="guardModalTitle">Add New Guard</h2>
+                <span class="close" onclick="closeGuardModal()">&times;</span>
+            </div>
+            <form id="guardForm">
+                <input type="hidden" id="guardId">
+                
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="guardName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" id="guardPhone">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="guardEmail">
+                </div>
+
+                <div class="form-group">
+                    <label>Shift *</label>
+                    <select id="guardShift" required>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Night">Night</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>PIN (4 digits) *</label>
+                    <input type="text" id="guardPin" maxlength="4" pattern="[0-9]{4}" required placeholder="e.g., 1234">
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-save">Save Guard</button>
+                    <button type="button" class="btn-cancel" onclick="closeGuardModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Checkpoint Modal -->
+    <div id="checkpointModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="checkpointModalTitle">Add New Checkpoint</h2>
+                <span class="close" onclick="closeCheckpointModal()">&times;</span>
+            </div>
+            <form id="checkpointForm">
+                <input type="hidden" id="checkpointId">
+                
+                <div class="form-group">
+                    <label>NFC Tag ID *</label>
+                    <input type="text" id="nfcTagId" required placeholder="e.g., NFC004">
+                </div>
+
+                <div class="form-group">
+                    <label>Checkpoint Name *</label>
+                    <input type="text" id="checkpointName" required placeholder="e.g., Emergency Exit">
+                </div>
+
+                <div class="form-group">
+                    <label>Building *</label>
+                    <input type="text" id="building" required placeholder="e.g., Building C">
+                </div>
+
+                <div class="form-group">
+                    <label>Floor *</label>
+                    <input type="text" id="floor" required placeholder="e.g., 2nd Floor">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description" rows="3" placeholder="Optional description"></textarea>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-save">Save Checkpoint</button>
+                    <button type="button" class="btn-cancel" onclick="closeCheckpointModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/manage.js"></script>
+</body>
+</html>
