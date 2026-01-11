@@ -1,0 +1,41 @@
+[33mcommit 59a5b69441030c981ac20a87c760de6a3a66b79a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: capikmasakikan <shafiqhaikl123@gmail.com>
+Date:   Thu Jan 8 16:25:47 2026 +0800
+
+    Add manage.html for managing guard and checkpoint
+
+[33mcommit 4bff22ea4e13043ed7b84d8b4f61b1d4c6c47462[m
+Author: capikmasakikan <shafiqhaikl123@gmail.com>
+Date:   Mon Jan 5 11:41:01 2026 +0800
+
+    Complete the guard part (login, scaning and history) , connected to database
+
+[33mcommit b3b62bdb77b9965028214843a23f69e62abee330[m
+Author: capikmasakikan <shafiqhaikl123@gmail.com>
+Date:   Sun Jan 4 22:13:47 2026 +0800
+
+    Complete Spring Boot backend with REST API
+    
+    - Created Entity models (Guard, Checkpoint, Patrol, User)
+    
+    - Implemented JPA repositories for database access
+    
+    - Built service layer with business logic
+    
+    - Created REST API controllers with CRUD operations
+    
+    - Configured MySQL database connection
+    
+    - All API endpoints tested and working
+
+[33mcommit f6af2de4d595e477402cdc76d2522aeeff83efa3[m
+Author: capikmasakikan <shafiqhaikl123@gmail.com>
+Date:   Sun Jan 4 16:11:07 2026 +0800
+
+    Add gitignore file
+
+[33mcommit 2267be30cd9524c391d9ac6fbd1f8986b578d00d[m
+Author: capikmasakikan <shafiqhaikl123@gmail.com>
+Date:   Fri Jan 2 12:35:36 2026 +0800
+
+    Initial backend and database setup

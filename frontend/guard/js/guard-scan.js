@@ -171,11 +171,11 @@ async function recordPatrol(nfcTagId) {
         
         if (response.ok) {
             // Success
-            updateStatus('✅ Patrol recorded successfully!');
+            updateStatus(' Patrol recorded successfully!');
             
             // Show success alert
             const now = new Date();
-            alert(`✅ Success!\n\nCheckpoint scanned successfully!\nTag: ${nfcTagId}\nTime: ${now.toLocaleTimeString()}`);
+            alert(` Success!\n\nCheckpoint scanned successfully!\nTag: ${nfcTagId}\nTime: ${now.toLocaleTimeString()}`);
             
             // Clear status after 3 seconds
             setTimeout(() => {
@@ -184,14 +184,14 @@ async function recordPatrol(nfcTagId) {
             
         } else {
             // Error
-            updateStatus('❌ Error recording patrol');
-            alert('❌ Error: ' + (data.error || 'Could not record patrol'));
+            updateStatus(' Error recording patrol');
+            alert(' Error: ' + (data.error || 'Could not record patrol'));
         }
         
     } catch (error) {
         console.error('Record patrol error:', error);
-        updateStatus('❌ Connection error');
-        alert('❌ Connection error. Please check if backend is running.');
+        updateStatus(' Connection error');
+        alert(' Connection error. Please check if backend is running.');
     }
 }
 

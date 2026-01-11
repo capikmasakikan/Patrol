@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Security Patrol</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="pikm-logo.png" alt="Logo of PIKM" class="pikm-logo"/>
+                <h2>Kawalan Ulung Security</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active">
+                     Dashboard
+                </a>
+                <a href="manage.html" class="nav-item">
+                     Manage
+                </a>
+            </nav>
+            
+            <div class="user-info">
+                <p id="adminName">Loading...</p>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Dashboard</h1>
+                <p class="subtitle">Real-time patrol monitoring</p>
+            </header>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Total Patrols</h3>
+                        <p class="stat-number" id="totalPatrols">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Today's Patrols</h3>
+                        <p class="stat-number" id="todayPatrols">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Active Guards</h3>
+                        <p class="stat-number" id="totalGuards">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Checkpoints</h3>
+                        <p class="stat-number" id="totalCheckpoints">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Patrols -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Recent Patrols</h2>
+                    <button id="refreshBtn" class="btn-refresh"> Refresh</button>
+                </div>
+                
+                <div id="loading" class="loading">Loading patrols...</div>
+                
+                <div class="table-container" id="tableContainer" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Guard</th>
+                                <th>Checkpoint</th>
+                                <th>Building</th>
+                                <th>Floor</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patrolsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="noData" class="no-data" style="display: none;">
+                    <p>No patrol records found.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
