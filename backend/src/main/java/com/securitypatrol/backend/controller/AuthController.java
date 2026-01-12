@@ -25,7 +25,6 @@ public class AuthController {
         if (userService.verifyPassword(username, password)) {
             return userService.getUserByUsername(username)
                     .map(user -> {
-                        // Don't send password back
                         user.setPassword(null);
                         return ResponseEntity.ok(Map.of(
                                 "message", "Login successful",
@@ -44,7 +43,7 @@ public class AuthController {
     public ResponseEntity<?> register(@RequestBody User user) {
         try {
             User createdUser = userService.createUser(user);
-            createdUser.setPassword(null); // Don't send password back
+            createdUser.setPassword(null); 
             return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
                     "message", "User registered successfully",
                     "user", createdUser
